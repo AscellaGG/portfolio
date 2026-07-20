@@ -1,5 +1,6 @@
 export interface Education {
   institution: string;
+  credential?: string;
   program: string;
   period: string;
   type: "degree" | "course";
@@ -10,7 +11,8 @@ export interface Education {
 export const education: Education[] = [
   {
     institution: "IT-Högskolan",
-    program: ".NET Developer (YH)",
+    credential: "Vocational higher education diploma",
+    program: ".NET Developer",
     period: "2023 - 2025",
     type: "degree",
     courses: [
@@ -23,5 +25,23 @@ export const education: Education[] = [
       "Customer Understanding, Consulting Skills, and Reporting",
     ],
     url: "https://www.iths.se/",
+  },
+  {
+    institution: "IT-Högskolan",
+    program: "Python Programming for AI Development",
+    type: "course",
+    period: "2025",
+  },
+  {
+    institution: "Linköping University",
+    program: "Individual Courses",
+    type: "degree",
+    period: "2021-2023",
+    courses: [
+      "Imperative Programming",
+      "Computer Environment Management",
+      "Project: Building a Personal Computing Environment",
+      "Elements of AI",
+    ],
   },
 ];

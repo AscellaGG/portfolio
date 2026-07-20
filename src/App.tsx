@@ -1,7 +1,8 @@
 import "./App.css";
 import { experiences } from "./data/experience";
 import { education } from "./data/education";
-import { Sparkle, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
+import GlitchText from "./components/GlitchText";
 
 function App() {
   return (
@@ -50,7 +51,10 @@ function App() {
 
       <main className="flex flex-col items-center gap-10">
         <section className="mt-10">
-          <h1 className="text-5xl font-bold">Otilia Schiff</h1>
+          {/* <h1 className="text-5xl font-bold">Otilia Schiff</h1> */}
+          <div className="text-5xl font-bold">
+            <GlitchText text="Otilia Schiff" />
+          </div>
           <h2 className="text-xl mt-3 text-powder-blush">
             Junior .NET Developer
           </h2>
@@ -97,8 +101,9 @@ function App() {
               >
                 {education.institution}
               </a>
+              {education.credential && <p>{education.credential}</p>}
               <p className="text-muted-text">{education.period}</p>
-              <ul>
+              <ul className="mt-2">
                 {education.courses?.map((course) => (
                   <li
                     key={course}
@@ -109,6 +114,7 @@ function App() {
                   </li>
                 ))}
               </ul>
+              {education.type === "course" && "Standalone course"}
             </article>
           ))}
         </section>
