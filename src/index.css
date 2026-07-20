@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@theme {
+  --color-lavender-blush: var(--lavender-blush);
+  --color-powder-blush: var(--powder-blush);
+  --color-muted-blush: var(--muted-blush);
+  --color-pacific-cyan: var(--pacific-cyan);
+  --color-dark-amethyst: var(--dark-amethyst);
+}
+
 :root {
   --text: #6b6375;
   --text-h: #08060d;
