@@ -1,5 +1,6 @@
 import "./App.css";
 import { experiences } from "./data/experience";
+import { education } from "./data/education";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         </p>
       </section>
 
+      {/* WORK EXPERIENCE */}
       <section className="mt-15 mx-30">
         <h2 className="text-3xl font-bold">Work Experience</h2>
 
@@ -37,10 +39,28 @@ function App() {
         ))}
       </section>
 
+      {/* EDUCATION */}
+      <section className="mt-15 mx-30">
+        <h2 className="text-3xl font-bold">Education</h2>
+
+        {education.map((education) => (
+          <article key={education.institution} className="mt-6">
+            <h3 className="text-xl font-bold">{education.program}</h3>
+            <a
+              href={education.institution}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {education.institution}
+            </a>
+            <p className="text-powder-blush">{education.period}</p>
+          </article>
+        ))}
+      </section>
+
       {/* CONTACT */}
       <section className="mt-15 mb-15">
         <h2 className="text-3xl font-semibold">Contact</h2>
-
         <div className="mt-4 flex gap-4 justify-center">
           <a
             href="https://github.com/AscellaGG"
@@ -58,6 +78,12 @@ function App() {
             LinkedIn
           </a>
         </div>
+        <a
+          href="mailto:otilia.schiff@gmail.com"
+          className="mt-4 inline-block underline"
+        >
+          otilia.schiff@gmail.com
+        </a>
       </section>
     </div>
   );
