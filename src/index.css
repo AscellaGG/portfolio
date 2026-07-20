@@ -3,9 +3,10 @@
 @theme {
   --color-lavender-blush: var(--lavender-blush);
   --color-powder-blush: var(--powder-blush);
-  --color-muted-blush: var(--muted-blush);
+  --color-muted-teal: var(--muted-teal);
   --color-pacific-cyan: var(--pacific-cyan);
   --color-dark-amethyst: var(--dark-amethyst);
+  --color-muted-text: var(--muted-text);
 }
 
 :root {
@@ -40,9 +41,10 @@
   }
   --lavender-blush: #ffebed;
   --powder-blush: #f6b6b7;
-  --muted-blush: #a6c9b6;
+  --muted-teal: #a6c9b6;
   --pacific-cyan: #3e828e;
   --dark-amethyst: #27153d;
+  --muted-text: rgba(255, 235, 237, 0.7);
 }
 
 @media (prefers-color-scheme: dark) {
