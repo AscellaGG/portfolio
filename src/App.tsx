@@ -1,7 +1,8 @@
 import "./App.css";
 import { experiences } from "./data/experience";
 import { education } from "./data/education";
-import { Sparkles } from "lucide-react";
+import { skills } from "./data/skills";
+import { Sparkles, ExternalLink } from "lucide-react";
 import GlitchText from "./components/GlitchText";
 
 function App() {
@@ -49,9 +50,8 @@ function App() {
         />
       </div>
 
-      <main className="flex flex-col items-center gap-10">
-        <section className="mt-10">
-          {/* <h1 className="text-5xl font-bold">Otilia Schiff</h1> */}
+      <main className="">
+        <div className="mt-10">
           <div className="text-5xl font-bold">
             <GlitchText text="Otilia Schiff" />
           </div>
@@ -62,65 +62,130 @@ function App() {
             I build web applications using C#, .NET, React and TypeScript.
             Interested in clean architecture and solving practical problems.
           </p>
-        </section>
+        </div>
 
-        {/* WORK EXPERIENCE */}
-        <section className="glass">
-          <h2 className="text-3xl font-bold">Work Experience</h2>
+        <div className="flex flex-row gap-10 m-20">
+          <section className="flex flex-col items-center gap-10 w-2/3">
+            {/* WORK EXPERIENCE */}
+            <div className="glass">
+              <h2 className="text-3xl font-bold">Work Experience</h2>
 
-          {experiences.map((experience) => (
-            <article key={experience.company} className="mt-6">
-              <div className="flex flex-row items-center justify-center gap-2 text-xl font-bold">
-                <h3>{experience.role}</h3>
-                <p> - </p>
-                <a
-                  href={experience.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {experience.company}
-                </a>
-              </div>
-              <p className="text-muted-text">{experience.period}</p>
-              <p>{experience.description}</p>
-            </article>
-          ))}
-        </section>
+              {experiences.map((experience) => (
+                <article key={experience.company} className="mt-6">
+                  <div className="flex flex-row items-center justify-center gap-2 text-xl font-semibold">
+                    <h3>{experience.role}</h3>
+                    <p> - </p>
+                    <a
+                      href={experience.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {experience.company}
+                    </a>
+                  </div>
+                  <p className="text-muted-text">{experience.period}</p>
+                  <p>{experience.description}</p>
+                </article>
+              ))}
+            </div>
 
-        {/* EDUCATION */}
-        <section className="glass">
-          <h2 className="text-3xl font-bold">Education</h2>
+            {/* EDUCATION */}
+            <div className="glass">
+              <h2 className="text-3xl font-bold">Education</h2>
 
-          {education.map((education) => (
-            <article key={education.institution} className="mt-6">
-              <h3 className="text-xl font-bold">{education.program}</h3>
-              <a
-                href={education.institution}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {education.institution}
-              </a>
-              {education.credential && <p>{education.credential}</p>}
-              <p className="text-muted-text">{education.period}</p>
-              <ul className="mt-2">
-                {education.courses?.map((course) => (
-                  <li
-                    key={course}
-                    className="flex items-center gap-2 justify-center"
+              {education.map((education) => (
+                <article key={education.institution} className="mt-6">
+                  <h3 className="text-xl font-semibold">{education.program}</h3>
+                  <a
+                    href={education.institution}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    <Sparkles className="h-3 w-3 text-accent text-muted-teal" />
-                    <span>{course}</span>
-                  </li>
+                    {education.institution}
+                  </a>
+                  {education.credential && <p>{education.credential}</p>}
+                  <p className="text-muted-text">{education.period}</p>
+                  <ul className="mt-2">
+                    {education.courses?.map((course) => (
+                      <li
+                        key={course}
+                        className="flex items-center gap-2 justify-center"
+                      >
+                        <Sparkles className="h-3 w-3 text-accent text-muted-teal" />
+                        <span>{course}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  {education.type === "course" && "Standalone course"}
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className="w-1/3 flex flex-col gap-10">
+            {/* Certificates */}
+            <div className="glass">
+              <h2 className="text-3xl font-bold">Certificates</h2>
+              <ul className="mt-4 font-semibold space-y-2">
+                <li>
+                  <a
+                    href="\certificates\6496 CTFL Otilia Schiff Cert.pdf"
+                    target="_blanc"
+                    className="inline-flex items-center gap-1"
+                    rel="noopener noreferrer"
+                  >
+                    <span>ISTQB Foundations</span>
+                    <ExternalLink className="h-3 w-3 text-accent text-muted-teal" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://learn.microsoft.com/api/credentials/share/en-us/OtiliaSchiff-7845/6C49ADA2A3A9467E?sharingId"
+                    target="_blanc"
+                    className="inline-flex items-center gap-1"
+                    rel="noopener noreferrer"
+                  >
+                    <span>Azure Fundamentals</span>
+                    <ExternalLink className="h-3 w-3 text-accent text-muted-teal" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="public\certificates\1764314380616.jpg"
+                    target="_blanc"
+                    className="inline-flex items-center gap-1"
+                    rel="noopener noreferrer"
+                  >
+                    <span>Elements of AI</span>
+                    <ExternalLink className="h-3 w-3 text-accent text-muted-teal" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Skills */}
+            <div className="glass">
+              <h2 className="text-3xl font-bold">Skills</h2>
+              <ul>
+                {skills.map((skills) => (
+                  <article key={skills.category} className="mt-6">
+                    <div className="flex flex-col items-center justify-center gap-2">
+                      <h3 className="text-xl font-semibold">
+                        {skills.category}
+                      </h3>
+                      {skills.skills.map((skill) => (
+                        <p key={skill}>{skill}</p>
+                      ))}
+                    </div>
+                  </article>
                 ))}
               </ul>
-              {education.type === "course" && "Standalone course"}
-            </article>
-          ))}
-        </section>
+            </div>
+          </section>
+        </div>
 
         {/* CONTACT */}
-        <section className="mb-15">
+        <div className="mb-15">
           <h2 className="text-3xl font-semibold">Contact</h2>
           <div className="mt-4 flex gap-4 justify-center">
             <a
@@ -145,7 +210,7 @@ function App() {
           >
             otilia.schiff@gmail.com
           </a>
-        </section>
+        </div>
       </main>
     </div>
   );
