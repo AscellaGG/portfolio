@@ -58,9 +58,10 @@ function App() {
           <h2 className="text-xl mt-3 text-powder-blush">
             Junior .NET Developer
           </h2>
-          <p className="mt-6">
-            I build web applications using C#, .NET, React and TypeScript.
-            Interested in clean architecture and solving practical problems.
+          <p className="mt-6 w-2/3 mx-auto text-center">
+            Junior .NET Developer with experience building APIs, web
+            applications, and SQL databases. Passionate about creating clean,
+            reliable software and always eager to learn.
           </p>
         </div>
 
@@ -72,9 +73,9 @@ function App() {
 
               {experiences.map((experience) => (
                 <article key={experience.company} className="mt-6">
-                  <div className="flex flex-row items-center justify-center gap-2 text-xl font-semibold">
+                  <div className="flex flex-col items-center md:flex-row md:justify-center md:gap-2 text-xl font-semibold">
                     <h3>{experience.role}</h3>
-                    <p> - </p>
+                    <span className="hidden md:inline">–</span>
                     <a
                       href={experience.url}
                       target="_blank"
@@ -119,7 +120,7 @@ function App() {
           </section>
 
           <section className="md:w-1/3 flex flex-col gap-10">
-            {/* Certificates */}
+            {/* CERTIFICATES */}
             <div className="glass">
               <h2 className="text-3xl font-bold">Certificates</h2>
               <ul className="mt-4 font-semibold space-y-2">
@@ -159,7 +160,7 @@ function App() {
               </ul>
             </div>
 
-            {/* Skills */}
+            {/* SKILLS */}
             <div className="glass">
               <h2 className="text-3xl font-bold">Skills</h2>
               <ul>
@@ -182,6 +183,20 @@ function App() {
                   </article>
                 ))}
               </ul>
+            </div>
+
+            {/* ABOUT ME */}
+            <div className="glass">
+              <h2 className="text-3xl font-bold mb-6">About me</h2>
+              <p>
+                I create structure and organization in my work, which helps me
+                complete tasks efficiently while maintaining a high standard of
+                quality.
+                <br className="mb-2" />
+                Problem-solving and creativity are my greatest motivators, and I
+                look forward to further developing my skills and applying them
+                in practical projects.
+              </p>
             </div>
           </section>
         </div>
