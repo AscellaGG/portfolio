@@ -9,10 +9,25 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
+    company: "Prinsparents Stiftelse",
+    url: "https://www.prinsparetsstiftelse.se/",
+    role: "Consultant",
+    period: "2026",
+    description:
+      "Supporting the organization with requirements for website development.",
+  },
+  {
+    company: "VoteIT",
+    url: "https://voteit.se",
+    role: "Freelance Software Tester",
+    period: "2025-2026",
+    description: "Acceptance-testing of platform.",
+  },
+  {
     company: "auticon (fd. Unicus)",
     url: "https://auticon.com/se/",
     role: "Intern",
-    period: "October 2025 - January 2025",
+    period: "October 2025 - January 2026",
     description:
       "Earned certifications in ISTQB Foundation Level and Microsoft Azure Fundamentals. Strengthened my knowledge of software testing and testing methodologies. Built a Data Warehouse as part of the training program.",
     technologies: ["Software Testing, Azure, Data Warehouse"],
