@@ -2,7 +2,7 @@ import "./App.css";
 import { experiences } from "./data/experience";
 import { education } from "./data/education";
 import { skills } from "./data/skills";
-import { Sparkles, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import GlitchText from "./components/GlitchText";
 
 function App() {
@@ -64,8 +64,8 @@ function App() {
           </p>
         </div>
 
-        <div className="flex flex-row gap-10 m-20">
-          <section className="flex flex-col items-center gap-10 w-2/3">
+        <div className="flex flex-col md:flex-row gap-10 mx-10 md:mx-20 my-15">
+          <section className="flex flex-col items-center gap-10 md:w-2/3">
             {/* WORK EXPERIENCE */}
             <div className="glass">
               <h2 className="text-3xl font-bold">Work Experience</h2>
@@ -105,14 +105,10 @@ function App() {
                   </a>
                   {education.credential && <p>{education.credential}</p>}
                   <p className="text-muted-text">{education.period}</p>
-                  <ul className="mt-2">
+                  <ul className="mt-2 sparkle-list list-inside">
                     {education.courses?.map((course) => (
-                      <li
-                        key={course}
-                        className="flex items-center gap-2 justify-center"
-                      >
-                        <Sparkles className="h-3 w-3 text-accent text-muted-teal" />
-                        <span>{course}</span>
+                      <li key={course} className="">
+                        <span className="pl-2">{course}</span>
                       </li>
                     ))}
                   </ul>
@@ -122,7 +118,7 @@ function App() {
             </div>
           </section>
 
-          <section className="w-1/3 flex flex-col gap-10">
+          <section className="md:w-1/3 flex flex-col gap-10">
             {/* Certificates */}
             <div className="glass">
               <h2 className="text-3xl font-bold">Certificates</h2>
@@ -135,7 +131,7 @@ function App() {
                     rel="noopener noreferrer"
                   >
                     <span>ISTQB Foundations</span>
-                    <ExternalLink className="h-3 w-3 text-accent text-muted-teal" />
+                    <ExternalLink className="h-3 w-3 text-muted-teal" />
                   </a>
                 </li>
                 <li>
@@ -173,9 +169,15 @@ function App() {
                       <h3 className="text-xl font-semibold">
                         {skills.category}
                       </h3>
-                      {skills.skills.map((skill) => (
-                        <p key={skill}>{skill}</p>
-                      ))}
+                      <ul className="sparkle-list list-inside">
+                        {skills.skills.map((skill) => (
+                          <li>
+                            <span key={skill} className="pl-2">
+                              {skill}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </article>
                 ))}
