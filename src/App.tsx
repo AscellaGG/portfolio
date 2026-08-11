@@ -2,7 +2,7 @@ import "./App.css";
 import { experiences } from "./data/experience";
 import { education } from "./data/education";
 import { skills } from "./data/skills";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, GraduationCap } from "lucide-react";
 import GlitchText from "./components/GlitchText";
 import Bubbles from "./components/Bubbles";
 
@@ -15,7 +15,7 @@ function App() {
       {/* MAIN */}
       <main className="">
         <div className="mt-10">
-          <div className="text-5xl font-bold overflow-x-hidden">
+          <div className="text-5xl font-bold overflow-hidden">
             <GlitchText text="Otilia Schiff" />
           </div>
           <h2 className="text-xl mt-3 text-powder-blush">
@@ -26,6 +26,15 @@ function App() {
             applications, and SQL databases. Passionate about creating clean,
             reliable software and always eager to learn.
           </p>
+          <h2 className="text-xl mt-6 text-powder-blush">
+            Available for freelance work.{" "}
+            <a
+              href="mailto:otilia.schiff@gmail.com"
+              className="inline-block underline"
+            >
+              Get in touch!
+            </a>
+          </h2>
         </div>
 
         <div className="flex flex-col md:flex-row gap-10 mx-10 md:mx-20 my-15">
@@ -59,8 +68,11 @@ function App() {
               <ul>
                 {education.map((education) => (
                   <li key={education.institution} className="mt-6">
-                    <h3 className="text-xl font-semibold">
+                    <h3 className="text-xl font-semibold flex justify-center items-center gap-2">
                       {education.program}
+                      {education.type === "degree" && (
+                        <GraduationCap className="text-muted-teal" />
+                      )}
                     </h3>
                     <a
                       href={education.institution}
@@ -70,6 +82,7 @@ function App() {
                       {education.institution}
                     </a>
                     {education.credential && <p>{education.credential}</p>}
+
                     <p className="text-muted-text">{education.period}</p>
                     <ul className="mt-2 sparkle-list list-inside">
                       {education.courses?.map((course) => (
@@ -78,7 +91,7 @@ function App() {
                         </li>
                       ))}
                     </ul>
-                    {education.type === "course" && "Standalone course"}
+                    <p>{education.description}</p>
                   </li>
                 ))}
               </ul>
@@ -138,8 +151,8 @@ function App() {
                       </h3>
                       <ul className="sparkle-list list-inside">
                         {skills.skills.map((skill) => (
-                          <li key={skill} className="pl-2">
-                            {skill}
+                          <li key={skill}>
+                            <span className="pl-1">{skill}</span>
                           </li>
                         ))}
                       </ul>

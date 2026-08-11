@@ -9,7 +9,7 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
-    company: "Prinsparents Stiftelse",
+    company: "Prinsparets Stiftelse",
     url: "https://www.prinsparetsstiftelse.se/",
     role: "Consultant",
     period: "2026",

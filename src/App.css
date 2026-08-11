@@ -11,6 +11,7 @@
 .sparkle-list li::marker {
   content: "✦";
   color: var(--muted-teal);
+  font-size: 0.8em;
 }
 
 .stack {
