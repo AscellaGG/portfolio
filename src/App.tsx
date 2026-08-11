@@ -93,29 +93,32 @@ function App() {
             {/* EDUCATION */}
             <div className="glass">
               <h2 className="text-3xl font-bold">Education</h2>
-
-              {education.map((education) => (
-                <article key={education.institution} className="mt-6">
-                  <h3 className="text-xl font-semibold">{education.program}</h3>
-                  <a
-                    href={education.institution}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {education.institution}
-                  </a>
-                  {education.credential && <p>{education.credential}</p>}
-                  <p className="text-muted-text">{education.period}</p>
-                  <ul className="mt-2 sparkle-list list-inside">
-                    {education.courses?.map((course) => (
-                      <li key={course} className="">
-                        <span className="pl-2">{course}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  {education.type === "course" && "Standalone course"}
-                </article>
-              ))}
+              <ul>
+                {education.map((education) => (
+                  <li key={education.institution} className="mt-6">
+                    <h3 className="text-xl font-semibold">
+                      {education.program}
+                    </h3>
+                    <a
+                      href={education.institution}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {education.institution}
+                    </a>
+                    {education.credential && <p>{education.credential}</p>}
+                    <p className="text-muted-text">{education.period}</p>
+                    <ul className="mt-2 sparkle-list list-inside">
+                      {education.courses?.map((course) => (
+                        <li key={course} className="">
+                          <span className="pl-2">{course}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    {education.type === "course" && "Standalone course"}
+                  </li>
+                ))}
+              </ul>
             </div>
           </section>
 
@@ -126,8 +129,8 @@ function App() {
               <ul className="mt-4 font-semibold space-y-2">
                 <li>
                   <a
-                    href="\certificates\6496 CTFL Otilia Schiff Cert.pdf"
-                    target="_blanc"
+                    href="/certificates/6496-CTFL-Otilia-Schiff-Cert.pdf"
+                    target="_blank"
                     className="inline-flex items-center gap-1"
                     rel="noopener noreferrer"
                   >
@@ -138,7 +141,7 @@ function App() {
                 <li>
                   <a
                     href="https://learn.microsoft.com/api/credentials/share/en-us/OtiliaSchiff-7845/6C49ADA2A3A9467E?sharingId"
-                    target="_blanc"
+                    target="_blank"
                     className="inline-flex items-center gap-1"
                     rel="noopener noreferrer"
                   >
@@ -148,8 +151,8 @@ function App() {
                 </li>
                 <li>
                   <a
-                    href="public\certificates\1764314380616.jpg"
-                    target="_blanc"
+                    href="/certificates/1764314380616.jpg"
+                    target="_blank"
                     className="inline-flex items-center gap-1"
                     rel="noopener noreferrer"
                   >
@@ -172,10 +175,8 @@ function App() {
                       </h3>
                       <ul className="sparkle-list list-inside">
                         {skills.skills.map((skill) => (
-                          <li>
-                            <span key={skill} className="pl-2">
-                              {skill}
-                            </span>
+                          <li key={skill} className="pl-2">
+                            {skill}
                           </li>
                         ))}
                       </ul>
