@@ -4,55 +4,18 @@ import { education } from "./data/education";
 import { skills } from "./data/skills";
 import { ExternalLink } from "lucide-react";
 import GlitchText from "./components/GlitchText";
+import Bubbles from "./components/Bubbles";
 
 function App() {
   return (
     <div className="text-center text-lavender-blush relative min-h-screen">
       {/* BACKGROUND */}
-      <div className="pointer-events-none absolute inset-0 fixed inset-0 -z-10 overflow-hidden">
-        <div
-          className="
-        absolute
-        -left-40
-        -top-40
-        h-[500px]
-        w-[500px]
-        rounded-full
-        bg-powder-blush/30
-        blur-[120px]
-      "
-        />
+      <Bubbles />
 
-        <div
-          className="
-        absolute
-        right-[-200px]
-        top-[20%]
-        h-[600px]
-        w-[600px]
-        rounded-full
-        bg-pacific-cyan/30
-        blur-[140px]
-      "
-        />
-
-        <div
-          className="
-        absolute
-        bottom-[-200px]
-        left-[30%]
-        h-[500px]
-        w-[500px]
-        rounded-full
-        bg-muted-teal/30
-        blur-[130px]
-      "
-        />
-      </div>
-
+      {/* MAIN */}
       <main className="">
         <div className="mt-10">
-          <div className="text-5xl font-bold">
+          <div className="text-5xl font-bold overflow-x-hidden">
             <GlitchText text="Otilia Schiff" />
           </div>
           <h2 className="text-xl mt-3 text-powder-blush">
