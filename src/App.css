@@ -33,6 +33,17 @@
   justify-content: space-between;
 }
 
+.button {
+  background: var(--color-lavender-blush);
+
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  border-right: 2px solid var(--color-dark-amethyst);
+  border-bottom: 2px solid var(--color-dark-amethyst);
+
+  padding: 4px 8px;
+}
+
 .window-button {
   width: 26px;
   height: 26px;
@@ -57,6 +68,28 @@
 
 .window-body {
   padding: 0px 20px 20px 20px;
+}
+
+.taskbar {
+  height: 50px;
+  background: var(--color-bubbelgum-bliss);
+
+  border-top: 2px solid white;
+  border-bottom: 2px solid var(--color-dark-amethyst);
+}
+
+.taskbar-content {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+}
+
+.taskbar a {
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  padding: 0 10px;
 }
 
 .sparkle-list li::marker {
