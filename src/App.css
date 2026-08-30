@@ -8,9 +8,93 @@
   width: 100%;
 }
 
+.window {
+  width: 100%;
+
+  border-top: 3px solid white;
+  border-left: 3px solid white;
+  border-right: 3px solid var(--color-dark-amethyst);
+  border-bottom: 3px solid var(--color-dark-amethyst);
+
+  background: color-mix(in srgb, var(--color-pale-rose) 100%, transparent);
+  color: var(--color-dark-amethyst);
+  font-family: "VT323", monospace;
+}
+
+.window-header {
+  width: 100%;
+  text-align: left;
+  padding: 3px 6px;
+  background-color: var(--color-bubbelgum-bliss);
+  color: var(--color-lavender-blush);
+  font-size: larger;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  background: var(--color-lavender-blush);
+
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  border-right: 2px solid var(--color-dark-amethyst);
+  border-bottom: 2px solid var(--color-dark-amethyst);
+
+  padding: 4px 8px;
+}
+
+.window-button {
+  width: 26px;
+  height: 26px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--color-lavender-blush);
+
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  border-right: 2px solid var(--color-dark-amethyst);
+  border-bottom: 2px solid var(--color-dark-amethyst);
+}
+
+.window-button svg {
+  width: 14px;
+  height: 14px;
+  color: var(--color-dark-amethyst);
+}
+
+.window-body {
+  padding: 0px 20px 20px 20px;
+}
+
+.taskbar {
+  height: 50px;
+  background: var(--color-bubbelgum-bliss);
+
+  border-top: 2px solid white;
+  border-bottom: 2px solid var(--color-dark-amethyst);
+}
+
+.taskbar-content {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+}
+
+.taskbar a {
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  padding: 0 10px;
+}
+
 .sparkle-list li::marker {
   content: "✦";
-  color: var(--muted-teal);
+  color: var(--dreamy-periwinkle);
   font-size: 0.8em;
 }
 
@@ -50,8 +134,8 @@
     opacity: 0;
     transform: translateX(-50%);
     text-shadow:
-      -2px 3px 0 red,
-      2px -3px 0 blue;
+      -2px 3px 0 var(--bubblegum-bliss),
+      2px -3px 0 var(--dreamy-periwinkle);
   }
 
   60% {
@@ -63,8 +147,8 @@
     transform: none;
     opacity: 1;
     text-shadow:
-      2px -3px 0 red,
-      -2px 3px 0 blue;
+      2px -3px 0 var(--bubblegum-bliss),
+      -2px 3px 0 var(--dreamy-periwinkle);
   }
 
   100% {
@@ -75,15 +159,15 @@
 @keyframes glitch {
   0% {
     text-shadow:
-      -2px 3px 0 red,
-      2px -3px 0 blue;
+      -2px 3px 0 var(--bubblegum-bliss),
+      2px -3px 0 var(--dreamy-periwinkle);
     transform: translate(var(--glitch-translate));
   }
 
   2% {
     text-shadow:
-      2px -3px 0 red,
-      -2px 3px 0 blue;
+      2px -3px 0 var(--bubblegum-bliss),
+      -2px 3px 0 var(--dreamy-periwinkle);
   }
 
   4%,
