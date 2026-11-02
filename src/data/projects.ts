@@ -21,4 +21,9 @@ export const projects: Project[] = [
     description: "A machine learning project using Californa housing data.",
     url: "https://github.com/AscellaGG/CaliforniaHousingML",
   },
+  {
+    title: "Cyberbear - Discord bot",
+    description: "As a cyber security student, I created a discord bot to keep me and my classmates informed on current news in cyber security with a daily briefing.",
+    url: "https://github.com/AscellaGG/Cyberbear"
+  },
 ];

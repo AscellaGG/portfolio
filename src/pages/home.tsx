@@ -9,12 +9,12 @@ export default function Home() {
   return (
     <main>
       <div className="mt-10">
-        <div className="text-5xl font-bold overflow-hidden">
+        <div className="text-5xl font-bold">
           <GlitchText text="Otilia Schiff" />
         </div>
-        <h2 className="text-xl mt-3 text-bubbelgum-bliss">
-          Junior .NET Developer
-        </h2>
+        {/* <h2 className="text-xl mt-3 text-bubbelgum-bliss"> */}
+          {/* Junior .NET Developer */}
+        {/* </h2> */}
         <p className="mt-6 w-2/3 mx-auto text-center">
           Junior .NET Developer with experience building APIs, web applications,
           and SQL databases. Passionate about creating clean, reliable software
